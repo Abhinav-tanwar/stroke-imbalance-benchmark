@@ -1,0 +1,121 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stroke Imbalance Benchmark</title><style>body{font:16px/1.55 system-ui;background:#eef3f6;color:#173448;margin:0}main{max-width:1100px;margin:auto;padding:36px 24px}header{border-top:5px solid #28778b;padding-top:18px}.eyebrow{font-size:12px;letter-spacing:2px;color:#28778b}h1{font-size:39px;line-height:1.15;letter-spacing:-1px}h2{font-size:22px;margin-top:28px}a{color:#246a80}.notice{background:#fff1dc;padding:14px 18px;border-left:4px solid #cc873e}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:16px}.card,details{background:white;border:1px solid #d2dfe7;border-radius:10px;padding:18px}.card h2{margin:10px 0;font-size:21px}.card p{font-size:14px;color:#51697a}.card{color:inherit;text-decoration:none}table{background:white;border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:9px;border-bottom:1px solid #dce5eb;overflow-wrap:anywhere}pre{font-size:12px;overflow:auto}img{max-width:100%;border-radius:8px}footer{margin-top:30px;font-size:13px;color:#51697a}</style></head><body><main><header><p class="eyebrow">ABHINAV TANWAR · PYTHON ANALYSIS</p><h1>Stroke Imbalance Benchmark</h1><p>Mixed-type resampling and minority-class evaluation with leakage-controlled pipelines.</p></header><h2>Scope and methods</h2><p>The supplied 43,400-row dataset was located beside the notebook. ID is removed, and identical predictor profiles are kept within the same split with StratifiedGroupKFold. Numeric imputation/scaling and categorical encoding are fitted on training rows. SMOTENC generates mixed-type samples before final one-hot encoding; it does not interpolate one-hot categories. Baseline, class weighting, random oversampling, Tomek links, mixed-type SMOTE, and random forest share the same test records. Tomek distances on ordinal-coded nominal features are an approximation. Default threshold is 0.5; high accuracy can coexist with zero positive recall. Average precision must be assessed against the test prevalence. This retrospective label benchmark does not predict individual future clinical risk.</p><h2>Measured results</h2><table><tr><th>Calculated measure</th><th>Value</th></tr><tr><td>rows</td><td>4.34e+04</td></tr><tr><td>duplicates removed</td><td>0</td></tr><tr><td>train rows</td><td>3.472e+04</td></tr><tr><td>test rows</td><td>8,680</td></tr><tr><td>test positive</td><td>157</td></tr><tr><td>test prevalence</td><td>0.01809</td></tr><tr><td>majority accuracy</td><td>0.9819</td></tr><tr><td>threshold</td><td>0.5</td></tr><tr><td>group overlap</td><td>0</td></tr><tr><td>models / Logistic / accuracy</td><td>0.9819</td></tr><tr><td>models / Logistic / precision</td><td>0</td></tr><tr><td>models / Logistic / recall</td><td>0</td></tr><tr><td>models / Logistic / f1</td><td>0</td></tr><tr><td>models / Logistic / roc auc</td><td>0.8692</td></tr><tr><td>models / Logistic / average precision</td><td>0.1016</td></tr><tr><td>models / Weighted logistic / accuracy</td><td>0.7356</td></tr><tr><td>models / Weighted logistic / precision</td><td>0.05532</td></tr><tr><td>models / Weighted logistic / recall</td><td>0.8471</td></tr><tr><td>models / Weighted logistic / f1</td><td>0.1039</td></tr><tr><td>models / Weighted logistic / roc auc</td><td>0.8678</td></tr><tr><td>models / Weighted logistic / average precision</td><td>0.1008</td></tr><tr><td>models / Random oversampling / accuracy</td><td>0.7348</td></tr><tr><td>models / Random oversampling / precision</td><td>0.05516</td></tr><tr><td>models / Random oversampling / recall</td><td>0.8471</td></tr><tr><td>models / Random oversampling / f1</td><td>0.1036</td></tr><tr><td>models / Random oversampling / roc auc</td><td>0.8675</td></tr><tr><td>models / Random oversampling / average precision</td><td>0.1011</td></tr><tr><td>models / Tomek links / accuracy</td><td>0.9819</td></tr><tr><td>models / Tomek links / precision</td><td>0</td></tr><tr><td>models / Tomek links / recall</td><td>0</td></tr><tr><td>models / Tomek links / f1</td><td>0</td></tr><tr><td>models / Tomek links / roc auc</td><td>0.8692</td></tr><tr><td>models / Tomek links / average precision</td><td>0.1017</td></tr><tr><td>models / Mixed type SMOTE / accuracy</td><td>0.7423</td></tr><tr><td>models / Mixed type SMOTE / precision</td><td>0.05556</td></tr><tr><td>models / Mixed type SMOTE / recall</td><td>0.828</td></tr><tr><td>models / Mixed type SMOTE / f1</td><td>0.1041</td></tr><tr><td>models / Mixed type SMOTE / roc auc</td><td>0.8632</td></tr><tr><td>models / Mixed type SMOTE / average precision</td><td>0.1024</td></tr><tr><td>models / Random forest / accuracy</td><td>0.9819</td></tr><tr><td>models / Random forest / precision</td><td>0</td></tr><tr><td>models / Random forest / recall</td><td>0</td></tr><tr><td>models / Random forest / f1</td><td>0</td></tr><tr><td>models / Random forest / roc auc</td><td>0.8508</td></tr><tr><td>models / Random forest / average precision</td><td>0.07937</td></tr></table><details><summary>Full result structure</summary><pre>{
+  &quot;rows&quot;: 43400,
+  &quot;duplicates_removed&quot;: 0,
+  &quot;train_rows&quot;: 34720,
+  &quot;test_rows&quot;: 8680,
+  &quot;test_positive&quot;: 157,
+  &quot;test_prevalence&quot;: 0.018087557603686636,
+  &quot;majority_accuracy&quot;: 0.9819124423963134,
+  &quot;threshold&quot;: 0.5,
+  &quot;group_overlap&quot;: 0,
+  &quot;models&quot;: {
+    &quot;Logistic&quot;: {
+      &quot;accuracy&quot;: 0.9819124423963134,
+      &quot;precision&quot;: 0.0,
+      &quot;recall&quot;: 0.0,
+      &quot;f1&quot;: 0.0,
+      &quot;confusion&quot;: [
+        [
+          8523,
+          0
+        ],
+        [
+          157,
+          0
+        ]
+      ],
+      &quot;roc_auc&quot;: 0.8692021812839144,
+      &quot;average_precision&quot;: 0.10161364910067064
+    },
+    &quot;Weighted_logistic&quot;: {
+      &quot;accuracy&quot;: 0.7355990783410138,
+      &quot;precision&quot;: 0.055324459234608984,
+      &quot;recall&quot;: 0.8471337579617835,
+      &quot;f1&quot;: 0.10386567746973838,
+      &quot;confusion&quot;: [
+        [
+          6252,
+          2271
+        ],
+        [
+          24,
+          133
+        ]
+      ],
+      &quot;roc_auc&quot;: 0.8678472862116821,
+      &quot;average_precision&quot;: 0.1007878755199212
+    },
+    &quot;Random_oversampling&quot;: {
+      &quot;accuracy&quot;: 0.7347926267281106,
+      &quot;precision&quot;: 0.05516383243467441,
+      &quot;recall&quot;: 0.8471337579617835,
+      &quot;f1&quot;: 0.10358255451713395,
+      &quot;confusion&quot;: [
+        [
+          6245,
+          2278
+        ],
+        [
+          24,
+          133
+        ]
+      ],
+      &quot;roc_auc&quot;: 0.867486329609427,
+      &quot;average_precision&quot;: 0.10113373706813575
+    },
+    &quot;Tomek_links&quot;: {
+      &quot;accuracy&quot;: 0.9819124423963134,
+      &quot;precision&quot;: 0.0,
+      &quot;recall&quot;: 0.0,
+      &quot;f1&quot;: 0.0,
+      &quot;confusion&quot;: [
+        [
+          8523,
+          0
+        ],
+        [
+          157,
+          0
+        ]
+      ],
+      &quot;roc_auc&quot;: 0.8691715410754415,
+      &quot;average_precision&quot;: 0.1016518764276488
+    },
+    &quot;Mixed_type_SMOTE&quot;: {
+      &quot;accuracy&quot;: 0.7422811059907835,
+      &quot;precision&quot;: 0.05555555555555555,
+      &quot;recall&quot;: 0.8280254777070064,
+      &quot;f1&quot;: 0.10412494993992791,
+      &quot;confusion&quot;: [
+        [
+          6313,
+          2210
+        ],
+        [
+          27,
+          130
+        ]
+      ],
+      &quot;roc_auc&quot;: 0.8632243513430501,
+      &quot;average_precision&quot;: 0.10238222743773509
+    },
+    &quot;Random_forest&quot;: {
+      &quot;accuracy&quot;: 0.9819124423963134,
+      &quot;precision&quot;: 0.0,
+      &quot;recall&quot;: 0.0,
+      &quot;f1&quot;: 0.0,
+      &quot;confusion&quot;: [
+        [
+          8523,
+          0
+        ],
+        [
+          157,
+          0
+        ]
+      ],
+      &quot;roc_auc&quot;: 0.8507821847365429,
+      &quot;average_precision&quot;: 0.07937144272200412
+    }
+  }
+}</pre></details><footer>Calculated by the included native script. Public-repository status is recorded in the collection index.</footer></main></body></html>

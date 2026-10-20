@@ -1,0 +1,121 @@
+{
+  "rows": 43400,
+  "duplicates_removed": 0,
+  "train_rows": 34720,
+  "test_rows": 8680,
+  "test_positive": 157,
+  "test_prevalence": 0.018087557603686636,
+  "majority_accuracy": 0.9819124423963134,
+  "threshold": 0.5,
+  "group_overlap": 0,
+  "models": {
+    "Logistic": {
+      "accuracy": 0.9819124423963134,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion": [
+        [
+          8523,
+          0
+        ],
+        [
+          157,
+          0
+        ]
+      ],
+      "roc_auc": 0.8692021812839144,
+      "average_precision": 0.10161364910067064
+    },
+    "Weighted_logistic": {
+      "accuracy": 0.7355990783410138,
+      "precision": 0.055324459234608984,
+      "recall": 0.8471337579617835,
+      "f1": 0.10386567746973838,
+      "confusion": [
+        [
+          6252,
+          2271
+        ],
+        [
+          24,
+          133
+        ]
+      ],
+      "roc_auc": 0.8678472862116821,
+      "average_precision": 0.1007878755199212
+    },
+    "Random_oversampling": {
+      "accuracy": 0.7347926267281106,
+      "precision": 0.05516383243467441,
+      "recall": 0.8471337579617835,
+      "f1": 0.10358255451713395,
+      "confusion": [
+        [
+          6245,
+          2278
+        ],
+        [
+          24,
+          133
+        ]
+      ],
+      "roc_auc": 0.867486329609427,
+      "average_precision": 0.10113373706813575
+    },
+    "Tomek_links": {
+      "accuracy": 0.9819124423963134,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion": [
+        [
+          8523,
+          0
+        ],
+        [
+          157,
+          0
+        ]
+      ],
+      "roc_auc": 0.8691715410754415,
+      "average_precision": 0.1016518764276488
+    },
+    "Mixed_type_SMOTE": {
+      "accuracy": 0.7422811059907835,
+      "precision": 0.05555555555555555,
+      "recall": 0.8280254777070064,
+      "f1": 0.10412494993992791,
+      "confusion": [
+        [
+          6313,
+          2210
+        ],
+        [
+          27,
+          130
+        ]
+      ],
+      "roc_auc": 0.8632243513430501,
+      "average_precision": 0.10238222743773509
+    },
+    "Random_forest": {
+      "accuracy": 0.9819124423963134,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion": [
+        [
+          8523,
+          0
+        ],
+        [
+          157,
+          0
+        ]
+      ],
+      "roc_auc": 0.8507821847365429,
+      "average_precision": 0.07937144272200412
+    }
+  }
+}
