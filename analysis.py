@@ -111,14 +111,13 @@ def run():
         models={},
     )
     for name, (sampler, model) in variants.items():
-        pipe = ImbPipeline(
-            [
-                ("prepare", prepare()),
-                ("sample", sampler),
-                ("encode", encode()),
-                ("model", model),
-            ]
-        )
+        stages = [("prepare", prepare())]
+        if name == "Tomek_links":
+            stages.extend([("encode", encode()), ("sample", sampler)])
+        else:
+            stages.extend([("sample", sampler), ("encode", encode())])
+        stages.append(("model", model))
+        pipe = ImbPipeline(stages)
         pipe.fit(train, yt)
         prob = pipe.predict_proba(test)[:, 1]
         result["models"][name] = clf(yv, prob >= 0.5, prob)

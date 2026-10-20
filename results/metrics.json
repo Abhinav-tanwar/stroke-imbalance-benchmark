@@ -78,8 +78,8 @@
           0
         ]
       ],
-      "roc_auc": 0.8691715410754415,
-      "average_precision": 0.1016518764276488
+      "roc_auc": 0.8691745303640729,
+      "average_precision": 0.10155399326090091
     },
     "Mixed_type_SMOTE": {
       "accuracy": 0.7422811059907835,
